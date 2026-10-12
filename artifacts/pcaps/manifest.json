@@ -1,0 +1,114 @@
+{
+  "single.pcap": {
+    "packet_count": 1,
+    "messages": [
+      {
+        "sender_id": 1,
+        "recipient_id": 4294967295,
+        "message_id": 1,
+        "text": "Hello, Beacon! \ud83c\udf0d",
+        "compressed": false,
+        "total_packets": 1
+      }
+    ],
+    "expected_errors": []
+  },
+  "empty.pcap": {
+    "packet_count": 1,
+    "messages": [
+      {
+        "sender_id": 1,
+        "recipient_id": 4294967295,
+        "message_id": 2,
+        "text": "",
+        "compressed": false,
+        "total_packets": 1
+      }
+    ],
+    "expected_errors": []
+  },
+  "fragmented.pcap": {
+    "packet_count": 5,
+    "messages": [
+      {
+        "sender_id": 1,
+        "recipient_id": 4294967295,
+        "message_id": 3,
+        "text": "Beacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\n",
+        "compressed": false,
+        "total_packets": 5
+      }
+    ],
+    "expected_errors": []
+  },
+  "compressed.pcap": {
+    "packet_count": 1,
+    "messages": [
+      {
+        "sender_id": 1,
+        "recipient_id": 4294967295,
+        "message_id": 4,
+        "text": "A repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\nA repeated message benefits from compression.\n",
+        "compressed": true,
+        "total_packets": 1
+      }
+    ],
+    "expected_errors": []
+  },
+  "interleaved.pcap": {
+    "packet_count": 5,
+    "messages": [
+      {
+        "sender_id": 1,
+        "recipient_id": 4294967295,
+        "message_id": 5,
+        "text": "Peer A: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "compressed": false,
+        "total_packets": 3
+      },
+      {
+        "sender_id": 2,
+        "recipient_id": 4294967295,
+        "message_id": 5,
+        "text": "Peer B: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+        "compressed": false,
+        "total_packets": 2
+      }
+    ],
+    "expected_errors": []
+  },
+  "reordered_duplicates.pcap": {
+    "packet_count": 7,
+    "messages": [
+      {
+        "sender_id": 1,
+        "recipient_id": 4294967295,
+        "message_id": 3,
+        "text": "Beacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\nBeacon over Wi-Fi \u2014 caf\u00e9 \ud83c\udf0d\n",
+        "compressed": false,
+        "total_packets": 5
+      }
+    ],
+    "expected_errors": []
+  },
+  "malformed_then_valid.pcap": {
+    "packet_count": 2,
+    "messages": [
+      {
+        "sender_id": 1,
+        "recipient_id": 4294967295,
+        "message_id": 1,
+        "text": "Hello, Beacon! \ud83c\udf0d",
+        "compressed": false,
+        "total_packets": 1
+      }
+    ],
+    "expected_errors": [
+      {
+        "packet_number": 1,
+        "error_type": "InvalidIE",
+        "detail": "truncated IE body"
+      }
+    ]
+  }
+}
