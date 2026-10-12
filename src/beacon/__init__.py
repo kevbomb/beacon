@@ -1,3 +1,3 @@
 """Beacon: chat protocol carried by vendor-specific Wi-Fi beacon elements."""
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"

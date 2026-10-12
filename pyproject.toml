@@ -4,11 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "beacon-chat"
-version = "0.1.0"
-description = "Offline protocol engine for chat over IEEE 802.11 beacon frames"
+version = "0.2.0"
+description = "Desktop and terminal chat over IEEE 802.11 beacon frames using Scapy"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = ["scapy>=2.6.1,<3"]
+
+[project.scripts]
+beacon-cli = "beacon.client.cli:main"
+beacon-gui = "beacon.client.gui:main"
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<10"]

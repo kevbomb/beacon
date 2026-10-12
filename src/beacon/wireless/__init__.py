@@ -1,1 +1,1 @@
-"""Offline wireless frame and PCAP adapters. No live I/O is implemented."""
+"""Scapy beacon framing, PCAP adapters, and a Linux monitor-mode transport."""

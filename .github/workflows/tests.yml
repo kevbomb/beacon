@@ -1,4 +1,4 @@
-name: Offline protocol tests
+name: Beacon tests
 
 on: [push, pull_request]
 
@@ -15,5 +15,10 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: python -m pip install -e ".[dev]"
-      - run: python -m pytest
+      - if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y xvfb python3-tk
+      - if: runner.os == 'Linux'
+        run: xvfb-run -a python -m pytest
+      - if: runner.os == 'Windows'
+        run: python -m pytest
       - run: python examples/generate_pcaps.py

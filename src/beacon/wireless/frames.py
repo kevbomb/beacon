@@ -21,6 +21,7 @@ DLT_IEEE802_11_RADIO = 127
 def build_beacon(
     fragment: Fragment, *, source_mac: str = "02:00:00:00:00:01",
     ssid: bytes = b"Beacon-local-test", channel: int = 1, sequence: int = 0,
+    frequency_mhz: int | None = None,
 ) -> Packet:
     """Build an offline radiotap beacon; never opens an interface or transmits."""
     validate_fragment(fragment)
@@ -30,22 +31,30 @@ def build_beacon(
         raise ValueError("source_mac must be a unicast address")
     if not isinstance(ssid, bytes) or len(ssid) > 32:
         raise ValueError("ssid must be at most 32 bytes")
-    if isinstance(channel, bool) or not isinstance(channel, int) or not 1 <= channel <= 14:
-        raise ValueError("example frames support 2.4 GHz channel numbers 1 through 14")
+    if isinstance(channel, bool) or not isinstance(channel, int) or not 1 <= channel <= 196:
+        raise ValueError("invalid channel number")
+    if frequency_mhz is not None and type(frequency_mhz) is not int:
+        raise ValueError("frequency_mhz must be an integer")
+    five_ghz = frequency_mhz is not None and 5000 < frequency_mhz < 5925
+    if five_ghz:
+        if frequency_mhz != 5000 + 5 * channel:
+            raise ValueError("5 GHz channel and frequency do not match")
+    elif not 1 <= channel <= 14 or (frequency_mhz is not None and frequency_mhz != (2484 if channel == 14 else 2407 + 5 * channel)):
+        raise ValueError("2.4 GHz channel and frequency do not match")
     if isinstance(sequence, bool) or not isinstance(sequence, int) or not 0 <= sequence <= 4095:
         raise ValueError("sequence must be an integer from 0 through 4095")
     control, data = encode_control(fragment.control), encode_data(fragment.data)
-    return (
+    frame = (
         RadioTap()
         / Dot11(type=0, subtype=8, addr1="ff:ff:ff:ff:ff:ff", addr2=source_mac,
                 addr3=source_mac, SC=sequence << 4)
         / Dot11Beacon(timestamp=0, beacon_interval=100, cap="ESS")
         / Dot11Elt(ID=0, info=ssid)
-        / Dot11Elt(ID=1, info=b"\x82\x84\x8b\x96")
-        / Dot11Elt(ID=3, info=bytes((channel,)))
-        / Dot11Elt(ID=VENDOR_IE_ID, info=control[2:])
-        / Dot11Elt(ID=VENDOR_IE_ID, info=data[2:])
+        / Dot11Elt(ID=1, info=b"\x8c\x12\x98\x24\xb0\x48\x60\x6c" if five_ghz else b"\x82\x84\x8b\x96")
     )
+    if not five_ghz:
+        frame /= Dot11Elt(ID=3, info=bytes((channel,)))
+    return frame / Dot11Elt(ID=VENDOR_IE_ID, info=control[2:]) / Dot11Elt(ID=VENDOR_IE_ID, info=data[2:])
 
 
 def decode_beacon(

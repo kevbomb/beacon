@@ -157,19 +157,53 @@ non-DATA control traffic; it never interprets it as chat text. A malformed packe
 does not abort scanning subsequent complete PCAP records. Corrupt PCAP container
 headers/records cannot always be recovered; these produce a file error.
 
-The initial frame decoder accepts raw IEEE 802.11 or radiotap+802.11 beacon bytes.
+The frame decoder accepts raw IEEE 802.11 or radiotap+802.11 beacon bytes.
 PCAP support accepts link types 105 (IEEE 802.11) and 127 (radiotap), classic PCAP
 and PCAPNG through Scapy. Radiotap FCS presence is respected when flagged, but FCS
 verification is not implemented. Raw 802.11 input assumes no trailing FCS.
 Generated captures use radiotap without an FCS and include SSID, supported rates,
-and channel IEs followed by the Beacon IEs. Source/BSSID addresses are synthetic.
+and channel IEs followed by the Beacon IEs. Offline examples use synthetic
+source/BSSID addresses. Live transmission uses the transmit interface's MAC.
+5 GHz frames use OFDM supported rates and omit the 2.4 GHz DS channel IE; the
+adapter's tuned channel determines the actual transmit frequency.
+
+## Chat client policy
+
+The terminal and desktop clients share one session/controller implementation and
+use the same DATA wire format described above. They introduce no payload wrappers,
+names, timestamps, encryption, or new control-message semantics.
+
+The client generates a random local ID in `1..0xFFFFFFFE` unless the user supplies
+one. Explicit local ID 0 is accepted; broadcast cannot identify a local peer.
+IDs are not persisted or checked for collisions. Each connection starts at a
+random 32-bit Message ID and increments it for each prepared message, wrapping at
+32 bits. Users must choose distinct peer IDs. This is application policy, not a
+wire-level allocation or authentication scheme.
+
+The session accepts messages addressed to its local ID or broadcast and ignores
+its own sender ID to suppress captured local transmissions. Chat input must be
+nonempty and at most 64 KiB of UTF-8 text. The session applies 64 KiB encoded and
+decoded reassembly limits; other receiver limits remain as above. The general
+protocol library still supports empty messages and configurable limits.
+
+The controller processes frames in a background worker and bounds queued sends
+(16), captured frames (512, at most 8192 bytes each), and UI events (128). Excess
+capture frames and the oldest UI events can be dropped under load. Malformed and
+unsupported frames are discarded without stopping reception. Outgoing fragments
+are paced at a default 20 ms interval. Disconnect cancels outstanding sends.
+
+Scapy handles live layer-2 reception/injection on existing Linux monitor
+interfaces. One interface is the default; separate RX/TX interfaces must share a
+frequency. Channel checks are startup checks, not continuous channel coordination.
+No association or IP address is required. Maintaining managed association on the
+same physical adapter depends on driver support for simultaneous managed/monitor
+interfaces and a shared channel. These clients do not configure that hardware
+state. A displayed send is unconfirmed adapter submission, not proof of receipt.
 
 ## Deferred work
 
-The optional `examples/capture_beacons.py` provides passive Scapy capture diagnostics
-for an existing monitor-mode interface. It is not a continuous chat receiver.
-No live transmission, interface configuration, GUI, TCP/IP transport, ACK engine,
-peer discovery, session lifecycle, or ID allocation is implemented.
-Future backends must address associated/disconnected operation, shared-channel
-coordination, single-adapter managed/monitor concurrency where supported, and
-optional dual adapters. Offline PCAP tests do not prove those hardware capabilities.
+ACK/NACK correlation, retransmission, HELLO/CLOSE behavior, peer discovery,
+persistent identity, automatic channel coordination/interface configuration, and
+6 GHz support remain deferred. TCP/IP is not a fallback transport. Automated
+protocol, UI, and simulated-adapter tests do not prove over-the-air injection,
+reception, or managed/monitor concurrency on any particular hardware.
