@@ -166,8 +166,10 @@ and channel IEs followed by the Beacon IEs. Source/BSSID addresses are synthetic
 
 ## Deferred work
 
-No live transmission, live sniffing, interface configuration, GUI, TCP/IP transport,
-ACK engine, peer discovery, session lifecycle, or ID allocation is implemented.
+The optional `examples/capture_beacons.py` provides passive Scapy capture diagnostics
+for an existing monitor-mode interface. It is not a continuous chat receiver.
+No live transmission, interface configuration, GUI, TCP/IP transport, ACK engine,
+peer discovery, session lifecycle, or ID allocation is implemented.
 Future backends must address associated/disconnected operation, shared-channel
 coordination, single-adapter managed/monitor concurrency where supported, and
 optional dual adapters. Offline PCAP tests do not prove those hardware capabilities.
